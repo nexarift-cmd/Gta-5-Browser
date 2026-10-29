@@ -1,0 +1,2761 @@
+{
+  "date": "2026-10-09",
+  "environment": {
+    "gpu": "NVIDIA RTX 5060",
+    "cpu": "AMD Ryzen 5 7500F",
+    "usableRamGiB": 15.5,
+    "browser": "Microsoft Edge 154",
+    "api": "WebGPU",
+    "resolution": [
+      1920,
+      1080
+    ],
+    "low": 0
+  },
+  "limitations": [
+    "Camera directions and streaming workloads varied despite held player input.",
+    "These timings do not isolate an exact FPS gain or establish 60 FPS.",
+    "CPU is renderer-worker active wall time; native simulation timing is unavailable.",
+    "GPU is sampled pass execution, excluding copies; memory accounting is not VRAM residency.",
+    "Short tests do not establish long-traversal memory bounds."
+  ],
+  "runs": [
+    {
+      "name": "gta6-baseline-protected",
+      "map": "GTA VI env_test",
+      "implementation": "dedicated buffers",
+      "captureLabel": "dedicated-buffers",
+      "frames": 1294,
+      "fps": 20.88768799927911,
+      "frameMs": {
+        "samples": 1294,
+        "mean": 47.87509273570693,
+        "median": 41.00499999523163,
+        "p95": 93.63999998569489,
+        "max": 440.99000000953674
+      },
+      "rendererCpuMs": {
+        "samples": 1294,
+        "mean": 41.961468323581556,
+        "median": 36.78500020503998,
+        "p95": 81.98500001430511,
+        "max": 351.57999980449677
+      },
+      "gpuPassMs": {
+        "samples": 43,
+        "mean": 2.4141633488372096,
+        "median": 2.359296,
+        "p95": 3.2768,
+        "max": 3.407872
+      },
+      "draws": {
+        "samples": 1294,
+        "mean": 5356.549459041731,
+        "median": 5162,
+        "p95": 8103,
+        "max": 8464
+      },
+      "triangles": {
+        "samples": 1294,
+        "mean": 4397031.029366306,
+        "median": 4603474,
+        "p95": 6425788,
+        "max": 7094139
+      },
+      "uploadCpuMs": {
+        "samples": 1294,
+        "mean": 3.7708887074609074,
+        "median": 0.4099998474121094,
+        "p95": 22.990000247955322,
+        "max": 78.84000015258789
+      },
+      "uploadBytes": {
+        "samples": 1294,
+        "mean": 5375531.018547141,
+        "median": 1465354,
+        "p95": 21262892,
+        "max": 39450992
+      },
+      "framesOver100Ms": 51,
+      "memory": {
+        "wasmCapacityBytes": 3764453376,
+        "textureBytes": 2870384244,
+        "bufferBytes": 1193733352,
+        "uniformRingBytes": 50331648,
+        "objectsAlive": 110179,
+        "objectTableLength": 232208,
+        "bindGroupCache": 7779
+      },
+      "logicalGpuBuffers": 56613,
+      "physicalGpuBuffers": 56613,
+      "arena": null,
+      "gpuValidationErrors": 0,
+      "inputEvents": 0,
+      "pipelineCreations": 0,
+      "skippedDraws": 0
+    },
+    {
+      "name": "gta6-baseline-protected-repeat",
+      "map": "GTA VI env_test",
+      "implementation": "dedicated buffers",
+      "captureLabel": "dedicated-buffers",
+      "frames": 1514,
+      "fps": 24.500417631784877,
+      "frameMs": {
+        "samples": 1514,
+        "mean": 40.81563077939864,
+        "median": 37.794999957084656,
+        "p95": 73.96999990940094,
+        "max": 148.00499999523163
+      },
+      "rendererCpuMs": {
+        "samples": 1514,
+        "mean": 37.01840158332449,
+        "median": 34.00500011444092,
+        "p95": 68.20000004768372,
+        "max": 136.97499990463257
+      },
+      "gpuPassMs": {
+        "samples": 50,
+        "mean": 2.361917440000001,
+        "median": 2.29376,
+        "p95": 2.883584,
+        "max": 3.145728
+      },
+      "draws": {
+        "samples": 1514,
+        "mean": 6044.883751651255,
+        "median": 5939,
+        "p95": 8304,
+        "max": 8431
+      },
+      "triangles": {
+        "samples": 1514,
+        "mean": 4613942.906869221,
+        "median": 4594922,
+        "p95": 6118824,
+        "max": 6246746
+      },
+      "uploadCpuMs": {
+        "samples": 1514,
+        "mean": 5.606710695133814,
+        "median": 1.1050000190734863,
+        "p95": 32.31499993801117,
+        "max": 82.3199999332428
+      },
+      "uploadBytes": {
+        "samples": 1514,
+        "mean": 7559801.640686922,
+        "median": 4191466,
+        "p95": 25012002,
+        "max": 39036928
+      },
+      "framesOver100Ms": 4,
+      "memory": {
+        "wasmCapacityBytes": 3762356224,
+        "textureBytes": 2861870060,
+        "bufferBytes": 1180623984,
+        "uniformRingBytes": 50331648,
+        "objectsAlive": 110622,
+        "objectTableLength": 271175,
+        "bindGroupCache": 5630
+      },
+      "logicalGpuBuffers": 56670,
+      "physicalGpuBuffers": 56670,
+      "arena": null,
+      "gpuValidationErrors": 0,
+      "inputEvents": 0,
+      "pipelineCreations": 0,
+      "skippedDraws": 0
+    },
+    {
+      "name": "gta6-arena-protected",
+      "map": "GTA VI env_test",
+      "implementation": "shared geometry",
+      "captureLabel": "geometry-arena",
+      "frames": 1622,
+      "fps": 26.2741526403742,
+      "frameMs": {
+        "samples": 1622,
+        "mean": 38.06021886556863,
+        "median": 35.55999994277954,
+        "p95": 63.769999980926514,
+        "max": 143.99500000476837
+      },
+      "rendererCpuMs": {
+        "samples": 1622,
+        "mean": 34.7010480916603,
+        "median": 32.46999979019165,
+        "p95": 60.114999771118164,
+        "max": 132.6199997663498
+      },
+      "gpuPassMs": {
+        "samples": 54,
+        "mean": 2.791348148148148,
+        "median": 2.752512,
+        "p95": 3.145728,
+        "max": 3.342336
+      },
+      "draws": {
+        "samples": 1622,
+        "mean": 6601.046239210851,
+        "median": 7105,
+        "p95": 7870,
+        "max": 7917
+      },
+      "triangles": {
+        "samples": 1622,
+        "mean": 6254261.472872997,
+        "median": 6210184,
+        "p95": 6959126,
+        "max": 7068214
+      },
+      "uploadCpuMs": {
+        "samples": 1622,
+        "mean": 2.5124969163452504,
+        "median": 0.15999996662139893,
+        "p95": 19.204999923706055,
+        "max": 43.299999833106995
+      },
+      "uploadBytes": {
+        "samples": 1622,
+        "mean": 4334967.032059186,
+        "median": 849480,
+        "p95": 21282096,
+        "max": 41376972
+      },
+      "framesOver100Ms": 5,
+      "memory": {
+        "wasmCapacityBytes": 3764453376,
+        "textureBytes": 2835676772,
+        "bufferBytes": 1225564048,
+        "uniformRingBytes": 50331648,
+        "objectsAlive": 110933,
+        "objectTableLength": 235269,
+        "bindGroupCache": 7203
+      },
+      "logicalGpuBuffers": 56172,
+      "physicalGpuBuffers": 10721,
+      "arena": {
+        "physicalBuffers": 119,
+        "allocatedBytes": 499122176,
+        "logicalBytes": 350888452,
+        "liveRanges": 45570,
+        "retiredRanges": 0,
+        "buffersCreated": 124
+      },
+      "gpuValidationErrors": 0,
+      "inputEvents": 0,
+      "pipelineCreations": 0,
+      "skippedDraws": 0
+    },
+    {
+      "name": "gta6-arena-protected-repeat",
+      "map": "GTA VI env_test",
+      "implementation": "shared geometry",
+      "captureLabel": "geometry-arena",
+      "frames": 1565,
+      "fps": 25.33313681938448,
+      "frameMs": {
+        "samples": 1565,
+        "mean": 39.473990415384215,
+        "median": 38.0349999666214,
+        "p95": 62.74000000953674,
+        "max": 139.70500004291534
+      },
+      "rendererCpuMs": {
+        "samples": 1565,
+        "mean": 36.38038977990135,
+        "median": 35.58500027656555,
+        "p95": 58.924999713897705,
+        "max": 124.22999942302704
+      },
+      "gpuPassMs": {
+        "samples": 52,
+        "mean": 2.7991433846153835,
+        "median": 2.752512,
+        "p95": 3.342336,
+        "max": 3.407872
+      },
+      "draws": {
+        "samples": 1565,
+        "mean": 6747.019808306709,
+        "median": 7085,
+        "p95": 7906,
+        "max": 8089
+      },
+      "triangles": {
+        "samples": 1565,
+        "mean": 6128588.4677316295,
+        "median": 5911941,
+        "p95": 6917595,
+        "max": 6997791
+      },
+      "uploadCpuMs": {
+        "samples": 1565,
+        "mean": 2.6010351472007582,
+        "median": 0.20000016689300537,
+        "p95": 19.985000014305115,
+        "max": 33.794999837875366
+      },
+      "uploadBytes": {
+        "samples": 1565,
+        "mean": 4670786.893290735,
+        "median": 1089646,
+        "p95": 21254212,
+        "max": 33608764
+      },
+      "framesOver100Ms": 2,
+      "memory": {
+        "wasmCapacityBytes": 3766550528,
+        "textureBytes": 2840035068,
+        "bufferBytes": 1222095484,
+        "uniformRingBytes": 50331648,
+        "objectsAlive": 111409,
+        "objectTableLength": 246370,
+        "bindGroupCache": 6366
+      },
+      "logicalGpuBuffers": 56564,
+      "physicalGpuBuffers": 10856,
+      "arena": {
+        "physicalBuffers": 119,
+        "allocatedBytes": 499122176,
+        "logicalBytes": 354611116,
+        "liveRanges": 45827,
+        "retiredRanges": 0,
+        "buffersCreated": 126
+      },
+      "gpuValidationErrors": 0,
+      "inputEvents": 0,
+      "pipelineCreations": 0,
+      "skippedDraws": 0
+    },
+    {
+      "name": "gta5-arena-default",
+      "map": "GTA V",
+      "implementation": "shared geometry",
+      "captureLabel": "dedicated-buffers",
+      "frames": 1577,
+      "fps": 50.594371576640086,
+      "frameMs": {
+        "samples": 1577,
+        "mean": 19.76504438809375,
+        "median": 17.899999976158142,
+        "p95": 30.169999957084656,
+        "max": 55.37999999523163
+      },
+      "rendererCpuMs": {
+        "samples": 1577,
+        "mean": 14.341896010185996,
+        "median": 13.96999979019165,
+        "p95": 18.12999999523163,
+        "max": 27.194999933242798
+      },
+      "gpuPassMs": {
+        "samples": 53,
+        "mean": 1.7521606037735846,
+        "median": 1.703936,
+        "p95": 2.097152,
+        "max": 2.29376
+      },
+      "draws": {
+        "samples": 1577,
+        "mean": 2965.871908687381,
+        "median": 2982,
+        "p95": 3152,
+        "max": 3248
+      },
+      "triangles": {
+        "samples": 1577,
+        "mean": 934093.2149651237,
+        "median": 965786,
+        "p95": 1009991,
+        "max": 1028357
+      },
+      "uploadCpuMs": {
+        "samples": 1577,
+        "mean": 0.0007324033548503869,
+        "median": 0,
+        "p95": 0,
+        "max": 0.7699999809265137
+      },
+      "uploadBytes": {
+        "samples": 1577,
+        "mean": 710112.8611287255,
+        "median": 694680,
+        "p95": 767672,
+        "max": 3536450
+      },
+      "framesOver100Ms": 0,
+      "memory": {
+        "wasmCapacityBytes": 3221225472,
+        "textureBytes": 1105670284,
+        "bufferBytes": 360532548,
+        "uniformRingBytes": 25165824,
+        "objectsAlive": 63610,
+        "objectTableLength": 63619,
+        "bindGroupCache": 1771
+      },
+      "logicalGpuBuffers": 29671,
+      "physicalGpuBuffers": 7154,
+      "arena": {
+        "physicalBuffers": 47,
+        "allocatedBytes": 197132288,
+        "logicalBytes": 140096972,
+        "liveRanges": 22564,
+        "retiredRanges": 0,
+        "buffersCreated": 47
+      },
+      "gpuValidationErrors": 0,
+      "inputEvents": 0,
+      "pipelineCreations": 2,
+      "skippedDraws": 94
+    }
+  ],
+  "hostMemorySnapshots": [
+    {
+      "label": "baseline-protected",
+      "timeUtc": "2026-10-09T20:48:19.3233045Z",
+      "availableMB": 492,
+      "committedBytes": 50154573824,
+      "pagesInputPerSecond": 3178,
+      "pageReadsPerSecond": 439,
+      "largestEdgeProcesses": [
+        {
+          "Role": "gpu-process",
+          "PrivateBytes": 11855777792,
+          "WorkingSet": 642715648
+        },
+        {
+          "Role": "renderer",
+          "PrivateBytes": 6143942656,
+          "WorkingSet": 1360814080
+        }
+      ]
+    },
+    {
+      "label": "arena-protected",
+      "timeUtc": "2026-10-09T20:52:35.6524594Z",
+      "availableMB": 658,
+      "committedBytes": 47058833408,
+      "pagesInputPerSecond": 858,
+      "pageReadsPerSecond": 95,
+      "largestEdgeProcesses": [
+        {
+          "Role": "gpu-process",
+          "PrivateBytes": 9303318528,
+          "WorkingSet": 721846272
+        },
+        {
+          "Role": "renderer",
+          "PrivateBytes": 6039015424,
+          "WorkingSet": 2577129472
+        }
+      ]
+    },
+    {
+      "label": "arena-protected-repeat",
+      "timeUtc": "2026-10-09T20:56:44.7556197Z",
+      "availableMB": 333,
+      "committedBytes": 47035645952,
+      "pagesInputPerSecond": 548,
+      "pageReadsPerSecond": 34,
+      "largestEdgeProcesses": [
+        {
+          "Role": "gpu-process",
+          "PrivateBytes": 8951955456,
+          "WorkingSet": 952619008
+        },
+        {
+          "Role": "renderer",
+          "PrivateBytes": 6345084928,
+          "WorkingSet": 3802501120
+        }
+      ]
+    },
+    {
+      "label": "dedicated-protected-repeat",
+      "timeUtc": "2026-10-09T20:59:50.5269326Z",
+      "availableMB": 380,
+      "committedBytes": 49529950208,
+      "pagesInputPerSecond": 579,
+      "pageReadsPerSecond": 11,
+      "largestEdgeProcesses": [
+        {
+          "Role": "gpu-process",
+          "PrivateBytes": 11640229888,
+          "WorkingSet": 2209476608
+        },
+        {
+          "Role": "renderer",
+          "PrivateBytes": 6403887104,
+          "WorkingSet": 2523856896
+        }
+      ]
+    }
+  ],
+  "lowEndUpdate20261013": {
+    "environment": {
+      "api": "WebGPU",
+      "adapter": {
+        "vendor": "nvidia",
+        "architecture": "blackwell",
+        "device": "",
+        "description": "",
+        "isFallbackAdapter": false
+      },
+      "features": [
+        "depth32float-stencil8",
+        "rg11b10ufloat-renderable",
+        "texture-formats-tier1",
+        "bgra8unorm-storage",
+        "depth-clip-control",
+        "texture-compression-bc",
+        "dual-source-blending",
+        "timestamp-query",
+        "texture-compression-bc-sliced-3d",
+        "core-features-and-limits",
+        "clip-distances",
+        "float32-filterable",
+        "indirect-first-instance"
+      ]
+    },
+    "runs": [
+      {
+        "name": "Low before broader catalogue",
+        "elapsedAfterReadyMs": 114426.13999986649,
+        "io": {
+          "timeMs": 150024.90000009537,
+          "fetchedBytes": 2150323394,
+          "engineReads": 17624,
+          "networkMisses": 6587,
+          "networkWaitMs": 122193.45499491692,
+          "fetches": 8157,
+          "activeFetches": 0,
+          "activePackDownloads": 0,
+          "queuedPacks": 0,
+          "persistentStore": true,
+          "rangeBatches": 1572,
+          "rangeRequestsSaved": 1621,
+          "packs": 48,
+          "packFailures": 0,
+          "packLoadAndValidationMs": 6019.145001173019,
+          "storeBytes": 2150323394,
+          "wasmBytes": 3946905600,
+          "decompressionMs": null,
+          "note": "HTTP body decompression is performed by the browser; archive decompression is inside WASM."
+        },
+        "benchmark": {
+          "frames": 756,
+          "frameMs": {
+            "samples": 756,
+            "mean": 33.368988095137176,
+            "median": 31.670000076293945,
+            "p95": 47.37000012397766,
+            "max": 100.97499990463257
+          },
+          "cpuMs": {
+            "samples": 756,
+            "mean": 23.575033076225765,
+            "median": 24.169999837875366,
+            "p95": 31.545000076293945,
+            "max": 41.89999985694885
+          },
+          "idleMs": {
+            "samples": 756,
+            "mean": 8.65373676952231,
+            "median": 7.1549999713897705,
+            "p95": 19.194999933242798,
+            "max": 69.48499989509583
+          },
+          "syncWaitMs": {
+            "samples": 756,
+            "mean": 0.008300264991780437,
+            "median": 0.005000114440917969,
+            "p95": 0.015000104904174805,
+            "max": 0.14500021934509277
+          },
+          "yieldWaitMs": {
+            "samples": 756,
+            "mean": 0.8771230070679276,
+            "median": 0.7149994373321533,
+            "p95": 1.6150000095367432,
+            "max": 32.57499980926514
+          },
+          "shaderWaitMs": {
+            "samples": 756,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "gpuMs": {
+            "samples": 25,
+            "mean": 1.6331571199999997,
+            "median": 1.572864,
+            "p95": 2.162688,
+            "max": 3.342336
+          },
+          "gpuSpanMs": {
+            "samples": 25,
+            "mean": 28.877783040000004,
+            "median": 28.966912,
+            "p95": 39.583744,
+            "max": 45.21984
+          },
+          "draws": {
+            "samples": 756,
+            "mean": 5320.906084656084,
+            "median": 5479,
+            "p95": 6456,
+            "max": 6552
+          },
+          "triangles": {
+            "samples": 756,
+            "mean": 4507473.973544974,
+            "median": 4362718,
+            "p95": 5713331,
+            "max": 5720617
+          },
+          "verticesOrIndices": {
+            "samples": 756,
+            "mean": 13407314.164021164,
+            "median": 12970372,
+            "p95": 17021758,
+            "max": 17042621
+          },
+          "renderPasses": {
+            "samples": 756,
+            "mean": 80.32671957671958,
+            "median": 79,
+            "p95": 87,
+            "max": 91
+          },
+          "computePasses": {
+            "samples": 756,
+            "mean": 4,
+            "median": 4,
+            "p95": 4,
+            "max": 4
+          },
+          "uploadBytes": {
+            "samples": 756,
+            "mean": 1297878.3095238095,
+            "median": 832824,
+            "p95": 3380164,
+            "max": 17619152
+          },
+          "submits": {
+            "samples": 756,
+            "mean": 5.300264550264551,
+            "median": 5,
+            "p95": 7,
+            "max": 9
+          },
+          "pipelineCpuMs": {
+            "samples": 756,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "moduleCpuMs": {
+            "samples": 756,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "uploadCpuMs": {
+            "samples": 756,
+            "mean": 0.3127909993368482,
+            "median": 0.125,
+            "p95": 1.140000581741333,
+            "max": 8.109999418258667
+          },
+          "flushCpuMs": {
+            "samples": 756,
+            "mean": 0.7730820223137185,
+            "median": 0.7200000286102295,
+            "p95": 1.200000524520874,
+            "max": 2.4549996852874756
+          },
+          "newPipelines": {
+            "samples": 756,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "skippedDraws": {
+            "samples": 756,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "newBindGroups": {
+            "samples": 756,
+            "mean": 5.699735449735449,
+            "median": 2,
+            "p95": 26,
+            "max": 69
+          },
+          "fps": 29.96794500177633,
+          "framesOver100Ms": 1,
+          "memory": {
+            "wasmCapacityBytes": 3946905600,
+            "textureBytes": 796702708,
+            "bufferBytes": 1283351588,
+            "proxyTextureBytes": 8294404,
+            "proxyTextures": 4,
+            "proxyTexturesCreated": 4,
+            "proxyTexturesDestroyed": 0,
+            "uniformRingBytes": 25165824,
+            "objectsAlive": 102033,
+            "objectTableLength": 102052,
+            "bindGroupCache": 7425
+          }
+        },
+        "configuration": {
+          "mode": "sandbox",
+          "map": "env_test",
+          "quality": "low",
+          "res": "1280x720",
+          "profile": "1",
+          "autoBenchmark": "1",
+          "benchmark": "geometry",
+          "benchmarkSeconds": "30",
+          "deliveryAudit": "1",
+          "cacheNamespace": "adaptive-low-gta6"
+        }
+      },
+      {
+        "name": "Low with broader catalogue",
+        "elapsedAfterReadyMs": 114156.95000004768,
+        "io": {
+          "timeMs": 142017.1549999714,
+          "fetchedBytes": 2335173826,
+          "engineReads": 17556,
+          "networkMisses": 1587,
+          "networkWaitMs": 47743.795001506805,
+          "fetches": 1660,
+          "activeFetches": 0,
+          "activePackDownloads": 0,
+          "queuedPacks": 0,
+          "persistentStore": true,
+          "rangeBatches": 305,
+          "rangeRequestsSaved": 307,
+          "packs": 243,
+          "packFailures": 0,
+          "packLoadAndValidationMs": 27973.264999628067,
+          "storeBytes": 2335173826,
+          "wasmBytes": 3949002752,
+          "decompressionMs": null,
+          "note": "HTTP body decompression is performed by the browser; archive decompression is inside WASM."
+        },
+        "benchmark": {
+          "frames": 806,
+          "frameMs": {
+            "samples": 806,
+            "mean": 31.35714640185496,
+            "median": 30.634999990463257,
+            "p95": 37.5699999332428,
+            "max": 88.42000007629395
+          },
+          "cpuMs": {
+            "samples": 806,
+            "mean": 29.21735731957864,
+            "median": 28.575000286102295,
+            "p95": 34.49999976158142,
+            "max": 42.1850004196167
+          },
+          "idleMs": {
+            "samples": 806,
+            "mean": 0.8845719646283474,
+            "median": 0,
+            "p95": 4.995000123977661,
+            "max": 18.109999895095825
+          },
+          "syncWaitMs": {
+            "samples": 806,
+            "mean": 0.007593051967194891,
+            "median": 0.005000114440917969,
+            "p95": 0.015000104904174805,
+            "max": 0.1099998950958252
+          },
+          "yieldWaitMs": {
+            "samples": 806,
+            "mean": 1.064174928972798,
+            "median": 0.9250001907348633,
+            "p95": 1.5999996662139893,
+            "max": 50.59500050544739
+          },
+          "shaderWaitMs": {
+            "samples": 806,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "gpuMs": {
+            "samples": 27,
+            "mean": 1.8471442962962965,
+            "median": 1.769472,
+            "p95": 2.162688,
+            "max": 2.555904
+          },
+          "gpuSpanMs": {
+            "samples": 27,
+            "mean": 30.947555555555557,
+            "median": 31.064064,
+            "p95": 35.979264,
+            "max": 36.569088
+          },
+          "draws": {
+            "samples": 806,
+            "mean": 7511.763027295286,
+            "median": 7492,
+            "p95": 7733,
+            "max": 7760
+          },
+          "triangles": {
+            "samples": 806,
+            "mean": 5360803.774193549,
+            "median": 5346753,
+            "p95": 5552905,
+            "max": 5572454
+          },
+          "verticesOrIndices": {
+            "samples": 806,
+            "mean": 15984794.637717122,
+            "median": 15944011,
+            "p95": 16555757,
+            "max": 16612214
+          },
+          "renderPasses": {
+            "samples": 806,
+            "mean": 86.12282878411911,
+            "median": 86,
+            "p95": 86,
+            "max": 90
+          },
+          "computePasses": {
+            "samples": 806,
+            "mean": 4,
+            "median": 4,
+            "p95": 4,
+            "max": 4
+          },
+          "uploadBytes": {
+            "samples": 806,
+            "mean": 744702.17617866,
+            "median": 743760,
+            "p95": 757920,
+            "max": 867160
+          },
+          "submits": {
+            "samples": 806,
+            "mean": 5.093052109181142,
+            "median": 5,
+            "p95": 6,
+            "max": 9
+          },
+          "pipelineCpuMs": {
+            "samples": 806,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "moduleCpuMs": {
+            "samples": 806,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "uploadCpuMs": {
+            "samples": 806,
+            "mean": 0.017413153541886776,
+            "median": 0.015000104904174805,
+            "p95": 0.034999847412109375,
+            "max": 0.08500003814697266
+          },
+          "flushCpuMs": {
+            "samples": 806,
+            "mean": 1.162723321476882,
+            "median": 1.109999656677246,
+            "p95": 1.5450000762939453,
+            "max": 4.005000114440918
+          },
+          "newPipelines": {
+            "samples": 806,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "skippedDraws": {
+            "samples": 806,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "newBindGroups": {
+            "samples": 806,
+            "mean": 0.93424317617866,
+            "median": 0,
+            "p95": 5,
+            "max": 42
+          },
+          "fps": 31.890656987232873,
+          "framesOver100Ms": 0,
+          "memory": {
+            "wasmCapacityBytes": 3949002752,
+            "textureBytes": 794165612,
+            "bufferBytes": 1294889656,
+            "proxyTextureBytes": 8294404,
+            "proxyTextures": 4,
+            "proxyTexturesCreated": 4,
+            "proxyTexturesDestroyed": 0,
+            "uniformRingBytes": 50331648,
+            "objectsAlive": 102292,
+            "objectTableLength": 102311,
+            "bindGroupCache": 5536
+          }
+        },
+        "configuration": {
+          "mode": "sandbox",
+          "map": "env_test",
+          "quality": "low",
+          "res": "1280x720",
+          "profile": "1",
+          "autoBenchmark": "1",
+          "benchmark": "geometry",
+          "benchmarkSeconds": "30",
+          "deliveryAudit": "1",
+          "cacheNamespace": "adaptive-fixed-gta6"
+        }
+      },
+      {
+        "name": "Low with broader catalogue and queued reads",
+        "elapsedAfterReadyMs": 96105.75,
+        "io": {
+          "timeMs": 124010.65499997139,
+          "fetchedBytes": 2348002498,
+          "engineReads": 17598,
+          "networkMisses": 492,
+          "networkWaitMs": 32818.42999768257,
+          "fetches": 1344,
+          "activeFetches": 0,
+          "activePackDownloads": 0,
+          "queuedPacks": 0,
+          "persistentStore": true,
+          "rangeBatches": 351,
+          "rangeRequestsSaved": 922,
+          "packs": 244,
+          "packFailures": 0,
+          "packLoadAndValidationMs": 47286.965000629425,
+          "storeBytes": 2348002498,
+          "wasmBytes": 3951099904,
+          "decompressionMs": null,
+          "note": "HTTP body decompression is performed by the browser; archive decompression is inside WASM."
+        },
+        "benchmark": {
+          "frames": 1011,
+          "frameMs": {
+            "samples": 1011,
+            "mean": 24.91476261132313,
+            "median": 24.479999780654907,
+            "p95": 32.514999866485596,
+            "max": 42.74000000953674
+          },
+          "cpuMs": {
+            "samples": 1011,
+            "mean": 21.439955486388165,
+            "median": 21.494999408721924,
+            "p95": 25.87500023841858,
+            "max": 39.799999952316284
+          },
+          "idleMs": {
+            "samples": 1011,
+            "mean": 2.479658754595899,
+            "median": 0,
+            "p95": 9.434999942779541,
+            "max": 14.68999981880188
+          },
+          "syncWaitMs": {
+            "samples": 1011,
+            "mean": 0.007176061766083941,
+            "median": 0.005000114440917969,
+            "p95": 0.014999866485595703,
+            "max": 0.07999992370605469
+          },
+          "yieldWaitMs": {
+            "samples": 1011,
+            "mean": 0.813214641178633,
+            "median": 0.7350003719329834,
+            "p95": 1.4449999332427979,
+            "max": 4.355000019073486
+          },
+          "shaderWaitMs": {
+            "samples": 1011,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "gpuMs": {
+            "samples": 34,
+            "mean": 1.923674352941176,
+            "median": 1.900544,
+            "p95": 2.359296,
+            "max": 2.490368
+          },
+          "gpuSpanMs": {
+            "samples": 34,
+            "mean": 24.701289411764705,
+            "median": 24.576,
+            "p95": 36.0448,
+            "max": 37.35552
+          },
+          "draws": {
+            "samples": 1011,
+            "mean": 6117.391691394659,
+            "median": 6450,
+            "p95": 6670,
+            "max": 6687
+          },
+          "triangles": {
+            "samples": 1011,
+            "mean": 6201782.59347181,
+            "median": 6352564,
+            "p95": 6480448,
+            "max": 6488535
+          },
+          "verticesOrIndices": {
+            "samples": 1011,
+            "mean": 18491485.90702275,
+            "median": 18944734,
+            "p95": 19330390,
+            "max": 19354651
+          },
+          "renderPasses": {
+            "samples": 1011,
+            "mean": 86.31058358061325,
+            "median": 87,
+            "p95": 87,
+            "max": 91
+          },
+          "computePasses": {
+            "samples": 1011,
+            "mean": 4,
+            "median": 4,
+            "p95": 4,
+            "max": 4
+          },
+          "uploadBytes": {
+            "samples": 1011,
+            "mean": 658561.1394658753,
+            "median": 668732,
+            "p95": 676712,
+            "max": 2188418
+          },
+          "submits": {
+            "samples": 1011,
+            "mean": 5.084075173095945,
+            "median": 5,
+            "p95": 6,
+            "max": 8
+          },
+          "pipelineCpuMs": {
+            "samples": 1011,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "moduleCpuMs": {
+            "samples": 1011,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "uploadCpuMs": {
+            "samples": 1011,
+            "mean": 0.03023739266702141,
+            "median": 0.02499985694885254,
+            "p95": 0.05000019073486328,
+            "max": 2.044999837875366
+          },
+          "flushCpuMs": {
+            "samples": 1011,
+            "mean": 0.7056775569444123,
+            "median": 0.684999942779541,
+            "p95": 0.9099998474121094,
+            "max": 2.364999771118164
+          },
+          "newPipelines": {
+            "samples": 1011,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "skippedDraws": {
+            "samples": 1011,
+            "mean": 0,
+            "median": 0,
+            "p95": 0,
+            "max": 0
+          },
+          "newBindGroups": {
+            "samples": 1011,
+            "mean": 0.897131552917903,
+            "median": 0,
+            "p95": 9,
+            "max": 30
+          },
+          "fps": 40.13684639907126,
+          "framesOver100Ms": 0,
+          "memory": {
+            "wasmCapacityBytes": 3951099904,
+            "textureBytes": 801439884,
+            "bufferBytes": 1298176944,
+            "proxyTextureBytes": 8294404,
+            "proxyTextures": 4,
+            "proxyTexturesCreated": 4,
+            "proxyTexturesDestroyed": 0,
+            "uniformRingBytes": 50331648,
+            "objectsAlive": 103244,
+            "objectTableLength": 103263,
+            "bindGroupCache": 7267
+          }
+        },
+        "configuration": {
+          "mode": "sandbox",
+          "map": "env_test",
+          "quality": "low",
+          "res": "1280x720",
+          "profile": "1",
+          "autoBenchmark": "1",
+          "benchmark": "geometry",
+          "benchmarkSeconds": "30",
+          "deliveryAudit": "1",
+          "cacheNamespace": "adaptive-queued-gta6"
+        }
+      }
+    ],
+    "limitations": [
+      "Desktop Chromium 155, Windows; NVIDIA/Blackwell exposed; board name hidden. User reports RTX 5060.",
+      "Matched GTA VI spawn, native 1280x720, low quality; isolated fresh local origins/stores. Dynamic NPCs and draw counts vary.",
+      "Early snapshots cover approximately 17,600 engine reads; durations differ slightly. IO fetches count logical range operations, not HTTP requests.",
+      "Observed delivery-overlay HTTP attempts: before 6585, coverage 1597, queued 667. These snapshots are not a precise Cloudflare billing count.",
+      "World-ready times: 35.6, 27.9, 29.1 seconds respectively; single cold runs, not an established repeated loading-time speedup.",
+      "No authoritative school-PC or iPhone results. Live resolution and progressive high-mip upgrades remain unavailable."
+    ]
+  },
+  "lowEndPublicPreview20261013": {
+    "map": "env_test",
+    "profile": "performance",
+    "resolution": [
+      640,
+      360
+    ],
+    "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "worldReadyMs": 258639.05999994278,
+    "durationAfterReadyMs": 6706894.730000019,
+    "finalWindow": {
+      "frames": 950,
+      "frameMs": {
+        "samples": 950,
+        "mean": 31.60720526318801,
+        "median": 31.295000076293945,
+        "p95": 37.5699999332428,
+        "max": 88.88000011444092
+      },
+      "cpuMs": {
+        "samples": 950,
+        "mean": 29.705384208779584,
+        "median": 29.78500008583069,
+        "p95": 34.30499982833862,
+        "max": 38.91499972343445
+      },
+      "idleMs": {
+        "samples": 950,
+        "mean": 0.5706842133873388,
+        "median": 0,
+        "p95": 4.539999961853027,
+        "max": 39
+      },
+      "syncWaitMs": {
+        "samples": 950,
+        "mean": 0.007663156860753109,
+        "median": 0.005000114440917969,
+        "p95": 0.014999866485595703,
+        "max": 0.04499983787536621
+      },
+      "yieldWaitMs": {
+        "samples": 950,
+        "mean": 1.1563842073239778,
+        "median": 0.9599997997283936,
+        "p95": 1.6999998092651367,
+        "max": 58.114999771118164
+      },
+      "shaderWaitMs": {
+        "samples": 950,
+        "mean": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "gpuMs": {
+        "samples": 31,
+        "mean": 1.5390389677419354,
+        "median": 1.507328,
+        "p95": 1.835008,
+        "max": 2.162688
+      },
+      "gpuSpanMs": {
+        "samples": 31,
+        "mean": 29.80619561290323,
+        "median": 30.081024,
+        "p95": 35.979264,
+        "max": 40.108032
+      },
+      "draws": {
+        "samples": 950,
+        "mean": 7102.798947368421,
+        "median": 7305,
+        "p95": 7380,
+        "max": 7490
+      },
+      "triangles": {
+        "samples": 950,
+        "mean": 5896341.656842105,
+        "median": 5469651,
+        "p95": 6615275,
+        "max": 6661487
+      },
+      "verticesOrIndices": {
+        "samples": 950,
+        "mean": 17589331.25263158,
+        "median": 16313637,
+        "p95": 19742766,
+        "max": 19883167
+      },
+      "renderPasses": {
+        "samples": 950,
+        "mean": 77.73684210526316,
+        "median": 77,
+        "p95": 79,
+        "max": 83
+      },
+      "computePasses": {
+        "samples": 950,
+        "mean": 3,
+        "median": 3,
+        "p95": 3,
+        "max": 3
+      },
+      "uploadBytes": {
+        "samples": 950,
+        "mean": 649911.7052631578,
+        "median": 658196,
+        "p95": 666700,
+        "max": 673956
+      },
+      "submits": {
+        "samples": 950,
+        "mean": 5.064210526315789,
+        "median": 5,
+        "p95": 5,
+        "max": 7
+      },
+      "pipelineCpuMs": {
+        "samples": 950,
+        "mean": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "moduleCpuMs": {
+        "samples": 950,
+        "mean": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "uploadCpuMs": {
+        "samples": 950,
+        "mean": 0.014694742152565403,
+        "median": 0.014999866485595703,
+        "p95": 0.02500009536743164,
+        "max": 0.2650001049041748
+      },
+      "flushCpuMs": {
+        "samples": 950,
+        "mean": 0.9893894790348253,
+        "median": 0.9949996471405029,
+        "p95": 1.3250000476837158,
+        "max": 2.820000171661377
+      },
+      "newPipelines": {
+        "samples": 950,
+        "mean": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "skippedDraws": {
+        "samples": 950,
+        "mean": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "newBindGroups": {
+        "samples": 950,
+        "mean": 0,
+        "median": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "fps": 31.63835561142354,
+      "framesOver100Ms": 0,
+      "memory": {
+        "wasmCapacityBytes": 3925934080,
+        "textureBytes": 751545020,
+        "bufferBytes": 1363810268,
+        "proxyTextureBytes": 2073692,
+        "proxyTextures": 6,
+        "proxyTexturesCreated": 6,
+        "proxyTexturesDestroyed": 0,
+        "uniformRingBytes": 50331648,
+        "objectsAlive": 108988,
+        "objectTableLength": 109007,
+        "bindGroupCache": 11432
+      }
+    },
+    "errors": [],
+    "limitations": [
+      "No matched public before/after comparison",
+      "Physical Dell and iPhone unavailable",
+      "Nearby texture completion not instrumented",
+      "Capacity and logical allocations are not resident memory"
+    ]
+  },
+  "lowEndProductionRelease20261013": {
+    "version": "5156a958-ecd6-48c8-8c53-9376c7de4e1a",
+    "maps": [
+      {
+        "map": "gta5",
+        "worldReadyMs": 23865.629999876022,
+        "cacheState": "warm existing production store",
+        "latestResolution": [
+          640,
+          360
+        ],
+        "io": {
+          "timeMs": 56086.609999895096,
+          "fetchedBytes": 4919296,
+          "engineReads": 15549,
+          "networkMisses": 19,
+          "networkWaitMs": 7552.845000267029,
+          "fetches": 28,
+          "activeFetches": 0,
+          "activePackDownloads": 0,
+          "queuedPacks": 0,
+          "persistentStore": true,
+          "rangeBatches": 5,
+          "rangeRequestsSaved": 6,
+          "packs": 1,
+          "packFailures": 0,
+          "packLoadAndValidationMs": 1489.5099999904633,
+          "storeBytes": 3315239449,
+          "wasmBytes": 3221225472,
+          "decompressionMs": null,
+          "note": "HTTP body decompression is performed by the browser; archive decompression is inside WASM."
+        },
+        "deliveryRequests": 24,
+        "errors": [],
+        "limitations": [
+          "Compatibility check, not matched before/after benchmark",
+          "Textures and geometry continue loading after world-ready",
+          "No radio playback started in this repeat"
+        ]
+      },
+      {
+        "map": "gta6",
+        "worldReadyMs": 21474.175000190735,
+        "cacheState": "warm existing production store",
+        "latestResolution": [
+          640,
+          360
+        ],
+        "io": {
+          "timeMs": 54086.799999952316,
+          "fetchedBytes": 8192,
+          "engineReads": 17532,
+          "networkMisses": 1,
+          "networkWaitMs": 137.09500002861023,
+          "fetches": 1,
+          "activeFetches": 0,
+          "activePackDownloads": 0,
+          "queuedPacks": 0,
+          "persistentStore": true,
+          "rangeBatches": 0,
+          "rangeRequestsSaved": 0,
+          "packs": 0,
+          "packFailures": 0,
+          "packLoadAndValidationMs": 0,
+          "storeBytes": 3315247641,
+          "wasmBytes": 3919642624,
+          "decompressionMs": null,
+          "note": "HTTP body decompression is performed by the browser; archive decompression is inside WASM."
+        },
+        "deliveryRequests": 2,
+        "errors": [],
+        "limitations": [
+          "Compatibility check, not matched before/after benchmark",
+          "Textures and geometry continue loading after world-ready",
+          "No radio playback started in this repeat"
+        ]
+      }
+    ],
+    "previewStrictDeliveryChecks": 51,
+    "productionBodyIsolationChecks": 25,
+    "strictProductionRouting": "incomplete: one byte-identical diagnostic script has stale edge-cache Worker label",
+    "physicalDevices": "Neither Dell nor iPhone available"
+  },
+  "worldStreaming20261014": {
+    "trials": [
+      {
+        "trial": 1,
+        "environment": {
+          "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+          "viewport": [
+            1280,
+            720
+          ],
+          "devicePixelRatio": 1,
+          "crossOriginIsolated": true,
+          "settings": {
+            "mode": "sandbox",
+            "map": "env_test",
+            "quality": "balanced",
+            "profile": "1",
+            "detail": "1",
+            "deliveryAudit": "1",
+            "autoBenchmark": "1",
+            "benchmarkSeconds": "30"
+          },
+          "visibility": "visible"
+        },
+        "phases": [
+          {
+            "label": "original-A",
+            "results": {
+              "frames": 867,
+              "frameMs": {
+                "samples": 867,
+                "mean": 29.066931949251664,
+                "median": 27.875,
+                "p95": 40.19500000029802,
+                "max": 68.05499999970198
+              },
+              "cpuMs": {
+                "samples": 867,
+                "mean": 26.406234140592737,
+                "median": 24.40999998152256,
+                "p95": 35.735000021755695,
+                "max": 63.53999996930361
+              },
+              "idleMs": {
+                "samples": 867,
+                "mean": 1.3956805074795857,
+                "median": 0,
+                "p95": 8.064999997615814,
+                "max": 23.030000001192093
+              },
+              "syncWaitMs": {
+                "samples": 867,
+                "mean": 0.008344867143182744,
+                "median": 0.009999997913837433,
+                "p95": 0.015000000596046448,
+                "max": 0.14000000059604645
+              },
+              "yieldWaitMs": {
+                "samples": 867,
+                "mean": 1.0755824685406108,
+                "median": 0.9199999943375587,
+                "p95": 1.7100000083446503,
+                "max": 36.6700000166893
+              },
+              "shaderWaitMs": {
+                "samples": 867,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "gpuMs": {
+                "samples": 29,
+                "mean": 1.8124093793103448,
+                "median": 1.507328,
+                "p95": 2.031616,
+                "max": 10.616832
+              },
+              "gpuSpanMs": {
+                "samples": 29,
+                "mean": 44.898939586206886,
+                "median": 44.433408,
+                "p95": 58.916864,
+                "max": 69.46816
+              },
+              "draws": {
+                "samples": 867,
+                "mean": 5983.697808535178,
+                "median": 5342,
+                "p95": 7696,
+                "max": 7762
+              },
+              "triangles": {
+                "samples": 867,
+                "mean": 4381873.9146482125,
+                "median": 3974073,
+                "p95": 5558512,
+                "max": 6214652
+              },
+              "verticesOrIndices": {
+                "samples": 867,
+                "mean": 13044938.292964244,
+                "median": 11822831,
+                "p95": 16572275,
+                "max": 18541386
+              },
+              "renderPasses": {
+                "samples": 867,
+                "mean": 85.49134948096886,
+                "median": 85,
+                "p95": 86,
+                "max": 90
+              },
+              "computePasses": {
+                "samples": 867,
+                "mean": 4,
+                "median": 4,
+                "p95": 4,
+                "max": 4
+              },
+              "uploadBytes": {
+                "samples": 867,
+                "mean": 938347.5663206459,
+                "median": 585572,
+                "p95": 2757996,
+                "max": 4836316
+              },
+              "submits": {
+                "samples": 867,
+                "mean": 5.087658592848904,
+                "median": 5,
+                "p95": 6,
+                "max": 7
+              },
+              "pipelineCpuMs": {
+                "samples": 867,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "moduleCpuMs": {
+                "samples": 867,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "uploadCpuMs": {
+                "samples": 867,
+                "mean": 0.11722606691212803,
+                "median": 0.030000008642673492,
+                "p95": 0.6450000032782555,
+                "max": 1.7549999877810478
+              },
+              "flushCpuMs": {
+                "samples": 867,
+                "mean": 0.8333621685755157,
+                "median": 0.755000002682209,
+                "p95": 1.2149999886751175,
+                "max": 5.695000000298023
+              },
+              "newPipelines": {
+                "samples": 867,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "skippedDraws": {
+                "samples": 867,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "newBindGroups": {
+                "samples": 867,
+                "mean": 0.02191464821222607,
+                "median": 0,
+                "p95": 0,
+                "max": 7
+              },
+              "fps": 34.4033557358552,
+              "framesOver100Ms": 0,
+              "memory": {
+                "wasmCapacityBytes": 3676372992,
+                "textureBytes": 2635083532,
+                "bufferBytes": 1247933912,
+                "proxyTextureBytes": 8294404,
+                "proxyTextures": 4,
+                "proxyTexturesCreated": 4,
+                "proxyTexturesDestroyed": 0,
+                "uniformRingBytes": 50331648,
+                "objectsAlive": 99760,
+                "objectTableLength": 140425,
+                "bindGroupCache": 5629
+              }
+            },
+            "cacheDelta": {
+              "resets": 0,
+              "fastChecks": 12384861,
+              "fastHits": 4962014,
+              "resourceEpochMisses": 1888,
+              "packCalls": 12548658,
+              "packHits": 7637773,
+              "packBytes": 6933108816,
+              "bgSlowPaths": 5122189,
+              "bgFastEntryAllocations": 5122189,
+              "bgFastEntryReuses": 0
+            },
+            "stageBGMeanSampledUs": 1.5997850360814563,
+            "playerInputLocked": true,
+            "inputEventsAfterWarmup": 0
+          },
+          {
+            "label": "optimized-B",
+            "results": {
+              "frames": 918,
+              "frameMs": {
+                "samples": 918,
+                "mean": 27.475969498916193,
+                "median": 27.350000001490116,
+                "p95": 41.189999997615814,
+                "max": 86.18999999761581
+              },
+              "cpuMs": {
+                "samples": 918,
+                "mean": 24.764074073759495,
+                "median": 22.285000003874302,
+                "p95": 36.9750000089407,
+                "max": 66.69999998807907
+              },
+              "idleMs": {
+                "samples": 918,
+                "mean": 1.3463289760264177,
+                "median": 0,
+                "p95": 8.25,
+                "max": 27.589999996125698
+              },
+              "syncWaitMs": {
+                "samples": 918,
+                "mean": 0.008567538039357054,
+                "median": 0.009999997913837433,
+                "p95": 0.015000000596046448,
+                "max": 0.08500000089406967
+              },
+              "yieldWaitMs": {
+                "samples": 918,
+                "mean": 1.161710239922494,
+                "median": 0.9699999913573265,
+                "p95": 1.9649999886751175,
+                "max": 46.48499999940395
+              },
+              "shaderWaitMs": {
+                "samples": 918,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "gpuMs": {
+                "samples": 31,
+                "mean": 2.2937600000000002,
+                "median": 1.245184,
+                "p95": 10.420224,
+                "max": 10.551296
+              },
+              "gpuSpanMs": {
+                "samples": 31,
+                "mean": 39.558375225806444,
+                "median": 38.600704,
+                "p95": 58.32704,
+                "max": 58.589184
+              },
+              "draws": {
+                "samples": 918,
+                "mean": 5244.920479302832,
+                "median": 4742,
+                "p95": 7590,
+                "max": 7718
+              },
+              "triangles": {
+                "samples": 918,
+                "mean": 3911219.54248366,
+                "median": 3589228,
+                "p95": 5464077,
+                "max": 5547380
+              },
+              "verticesOrIndices": {
+                "samples": 918,
+                "mean": 11635234.052287582,
+                "median": 10667830,
+                "p95": 16296051,
+                "max": 16543744
+              },
+              "renderPasses": {
+                "samples": 918,
+                "mean": 81.37145969498911,
+                "median": 77,
+                "p95": 86,
+                "max": 90
+              },
+              "computePasses": {
+                "samples": 918,
+                "mean": 4,
+                "median": 4,
+                "p95": 4,
+                "max": 4
+              },
+              "uploadBytes": {
+                "samples": 918,
+                "mean": 1796635.6361655775,
+                "median": 753356,
+                "p95": 6190588,
+                "max": 7442136
+              },
+              "submits": {
+                "samples": 918,
+                "mean": 5.0773420479302835,
+                "median": 5,
+                "p95": 5,
+                "max": 7
+              },
+              "pipelineCpuMs": {
+                "samples": 918,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "moduleCpuMs": {
+                "samples": 918,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "uploadCpuMs": {
+                "samples": 918,
+                "mean": 0.38642701499310195,
+                "median": 0.04500000923871994,
+                "p95": 1.7550000101327896,
+                "max": 4.910000018775463
+              },
+              "flushCpuMs": {
+                "samples": 918,
+                "mean": 0.8655065360168616,
+                "median": 0.7449999898672104,
+                "p95": 1.369999997317791,
+                "max": 3.5449999943375587
+              },
+              "newPipelines": {
+                "samples": 918,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "skippedDraws": {
+                "samples": 918,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "newBindGroups": {
+                "samples": 918,
+                "mean": 0.007625272331154684,
+                "median": 0,
+                "p95": 0,
+                "max": 3
+              },
+              "fps": 36.3954400240343,
+              "framesOver100Ms": 0,
+              "memory": {
+                "wasmCapacityBytes": 3676372992,
+                "textureBytes": 2637678916,
+                "bufferBytes": 1241914164,
+                "proxyTextureBytes": 8294404,
+                "proxyTextures": 4,
+                "proxyTexturesCreated": 4,
+                "proxyTexturesDestroyed": 0,
+                "uniformRingBytes": 50331648,
+                "objectsAlive": 100333,
+                "objectTableLength": 173290,
+                "bindGroupCache": 5639
+              }
+            },
+            "cacheDelta": {
+              "resets": 0,
+              "fastChecks": 11681299,
+              "fastHits": 4592065,
+              "resourceEpochMisses": 1810,
+              "packCalls": 7096471,
+              "packHits": 2323887,
+              "packBytes": 6683265152,
+              "bgSlowPaths": 4830973,
+              "bgFastEntryAllocations": 1,
+              "bgFastEntryReuses": 4830972
+            },
+            "stageBGMeanSampledUs": 1.4726890785770017,
+            "playerInputLocked": true,
+            "inputEventsAfterWarmup": 0
+          },
+          {
+            "label": "original-A2",
+            "results": {
+              "frames": 1008,
+              "frameMs": {
+                "samples": 1008,
+                "mean": 24.944920634924774,
+                "median": 23.765000000596046,
+                "p95": 36.53000000119209,
+                "max": 68.85000000149012
+              },
+              "cpuMs": {
+                "samples": 1008,
+                "mean": 21.706413691087317,
+                "median": 20.2049999833107,
+                "p95": 32.070000015199184,
+                "max": 55.7150000333786
+              },
+              "idleMs": {
+                "samples": 1008,
+                "mean": 1.9984275794454984,
+                "median": 0,
+                "p95": 9.369999997317791,
+                "max": 15.125
+              },
+              "syncWaitMs": {
+                "samples": 1008,
+                "mean": 0.008725198436646707,
+                "median": 0.009999997913837433,
+                "p95": 0.015000000596046448,
+                "max": 0.21000000089406967
+              },
+              "yieldWaitMs": {
+                "samples": 1008,
+                "mean": 1.022936507638189,
+                "median": 0.8650000020861626,
+                "p95": 1.7550000175833702,
+                "max": 28.644999995827675
+              },
+              "shaderWaitMs": {
+                "samples": 1008,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "gpuMs": {
+                "samples": 33,
+                "mean": 2.331492848484849,
+                "median": 1.6384,
+                "p95": 6.946816,
+                "max": 10.289152
+              },
+              "gpuSpanMs": {
+                "samples": 33,
+                "mean": 36.45787539393939,
+                "median": 34.07872,
+                "p95": 59.63776,
+                "max": 61.997056
+              },
+              "draws": {
+                "samples": 1008,
+                "mean": 4639.458333333333,
+                "median": 4504,
+                "p95": 7414,
+                "max": 7764
+              },
+              "triangles": {
+                "samples": 1008,
+                "mean": 4887400.632936508,
+                "median": 5508872,
+                "p95": 6237788,
+                "max": 6660993
+              },
+              "verticesOrIndices": {
+                "samples": 1008,
+                "mean": 14549460.347222222,
+                "median": 16406996,
+                "p95": 18602066,
+                "max": 19879373
+              },
+              "renderPasses": {
+                "samples": 1008,
+                "mean": 84.43849206349206,
+                "median": 87,
+                "p95": 87,
+                "max": 91
+              },
+              "computePasses": {
+                "samples": 1008,
+                "mean": 4,
+                "median": 4,
+                "p95": 4,
+                "max": 4
+              },
+              "uploadBytes": {
+                "samples": 1008,
+                "mean": 1901236.6666666667,
+                "median": 970216,
+                "p95": 5279828,
+                "max": 7442048
+              },
+              "submits": {
+                "samples": 1008,
+                "mean": 5.093253968253968,
+                "median": 5,
+                "p95": 6,
+                "max": 8
+              },
+              "pipelineCpuMs": {
+                "samples": 1008,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "moduleCpuMs": {
+                "samples": 1008,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "uploadCpuMs": {
+                "samples": 1008,
+                "mean": 0.43623511862778475,
+                "median": 0.14500000327825546,
+                "p95": 1.4200000241398811,
+                "max": 2.5800000056624413
+              },
+              "flushCpuMs": {
+                "samples": 1008,
+                "mean": 0.6708581349886362,
+                "median": 0.6050000116229057,
+                "p95": 1.0649999976158142,
+                "max": 5.024999998509884
+              },
+              "newPipelines": {
+                "samples": 1008,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "skippedDraws": {
+                "samples": 1008,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "newBindGroups": {
+                "samples": 1008,
+                "mean": 0.5545634920634921,
+                "median": 0,
+                "p95": 4,
+                "max": 29
+              },
+              "fps": 40.08832157196461,
+              "framesOver100Ms": 0,
+              "memory": {
+                "wasmCapacityBytes": 3676372992,
+                "textureBytes": 2637886060,
+                "bufferBytes": 1244008156,
+                "proxyTextureBytes": 8294404,
+                "proxyTextures": 4,
+                "proxyTexturesCreated": 4,
+                "proxyTexturesDestroyed": 0,
+                "uniformRingBytes": 50331648,
+                "objectsAlive": 100500,
+                "objectTableLength": 244987,
+                "bindGroupCache": 6198
+              }
+            },
+            "cacheDelta": {
+              "resets": 0,
+              "fastChecks": 10777990,
+              "fastHits": 4647522,
+              "resourceEpochMisses": 2566,
+              "packCalls": 10067664,
+              "packHits": 5679415,
+              "packBytes": 5932398672,
+              "bgSlowPaths": 3934248,
+              "bgFastEntryAllocations": 3934248,
+              "bgFastEntryReuses": 0
+            },
+            "stageBGMeanSampledUs": 1.5847379962841983,
+            "playerInputLocked": true,
+            "inputEventsAfterWarmup": 0
+          }
+        ]
+      },
+      {
+        "trial": 2,
+        "environment": {
+          "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+          "viewport": [
+            1280,
+            720
+          ],
+          "devicePixelRatio": 1,
+          "crossOriginIsolated": true,
+          "settings": {
+            "mode": "sandbox",
+            "map": "env_test",
+            "quality": "balanced",
+            "profile": "1",
+            "detail": "1",
+            "deliveryAudit": "1",
+            "autoBenchmark": "1",
+            "benchmarkSeconds": "30"
+          },
+          "visibility": "visible"
+        },
+        "phases": [
+          {
+            "label": "original-A",
+            "results": {
+              "frames": 839,
+              "frameMs": {
+                "samples": 839,
+                "mean": 31.80341477950544,
+                "median": 31.00499999523163,
+                "p95": 42.73499999940395,
+                "max": 72.21000000089407
+              },
+              "cpuMs": {
+                "samples": 839,
+                "mean": 27.144797377403787,
+                "median": 27.624999977648258,
+                "p95": 34.26500000059605,
+                "max": 65.69000001251698
+              },
+              "idleMs": {
+                "samples": 839,
+                "mean": 3.5517401668876944,
+                "median": 2.110000006854534,
+                "p95": 10.659999996423721,
+                "max": 19.910000003874302
+              },
+              "syncWaitMs": {
+                "samples": 839,
+                "mean": 0.0075506555877794665,
+                "median": 0.005000002682209015,
+                "p95": 0.015000000596046448,
+                "max": 0.0950000062584877
+              },
+              "yieldWaitMs": {
+                "samples": 839,
+                "mean": 0.8510369495338848,
+                "median": 0.7199999913573265,
+                "p95": 1.375,
+                "max": 37.82999999076128
+              },
+              "shaderWaitMs": {
+                "samples": 839,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "gpuMs": {
+                "samples": 28,
+                "mean": 1.598610285714286,
+                "median": 1.6384,
+                "p95": 1.835008,
+                "max": 1.835008
+              },
+              "gpuSpanMs": {
+                "samples": 28,
+                "mean": 48.00746057142857,
+                "median": 46.792704,
+                "p95": 56.557568,
+                "max": 62.717952
+              },
+              "draws": {
+                "samples": 839,
+                "mean": 6691.872467222885,
+                "median": 7364,
+                "p95": 7548,
+                "max": 7619
+              },
+              "triangles": {
+                "samples": 839,
+                "mean": 4874026.756853397,
+                "median": 5334666,
+                "p95": 5532924,
+                "max": 5568748
+              },
+              "verticesOrIndices": {
+                "samples": 839,
+                "mean": 14525517.912991656,
+                "median": 15908670,
+                "p95": 16501186,
+                "max": 16603532
+              },
+              "renderPasses": {
+                "samples": 839,
+                "mean": 77.57806912991657,
+                "median": 77,
+                "p95": 85,
+                "max": 89
+              },
+              "computePasses": {
+                "samples": 839,
+                "mean": 4,
+                "median": 4,
+                "p95": 4,
+                "max": 4
+              },
+              "uploadBytes": {
+                "samples": 839,
+                "mean": 908737.4088200239,
+                "median": 685476,
+                "p95": 2605458,
+                "max": 4522248
+              },
+              "submits": {
+                "samples": 839,
+                "mean": 5.184743742550656,
+                "median": 5,
+                "p95": 7,
+                "max": 9
+              },
+              "pipelineCpuMs": {
+                "samples": 839,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "moduleCpuMs": {
+                "samples": 839,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "uploadCpuMs": {
+                "samples": 839,
+                "mean": 0.11137067944841533,
+                "median": 0.03500000387430191,
+                "p95": 0.505000002682209,
+                "max": 1.915000043809414
+              },
+              "flushCpuMs": {
+                "samples": 839,
+                "mean": 0.8717818831729661,
+                "median": 0.8950000032782555,
+                "p95": 1.20499999076128,
+                "max": 2.7549999952316284
+              },
+              "newPipelines": {
+                "samples": 839,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "skippedDraws": {
+                "samples": 839,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "newBindGroups": {
+                "samples": 839,
+                "mean": 0.011918951132300357,
+                "median": 0,
+                "p95": 0,
+                "max": 2
+              },
+              "fps": 31.443164419074073,
+              "framesOver100Ms": 0,
+              "memory": {
+                "wasmCapacityBytes": 3676372992,
+                "textureBytes": 2635334724,
+                "bufferBytes": 1248035028,
+                "proxyTextureBytes": 8294404,
+                "proxyTextures": 4,
+                "proxyTexturesCreated": 4,
+                "proxyTexturesDestroyed": 0,
+                "uniformRingBytes": 50331648,
+                "objectsAlive": 99807,
+                "objectTableLength": 351418,
+                "bindGroupCache": 11671
+              }
+            },
+            "cacheDelta": {
+              "resets": 0,
+              "fastChecks": 12864620,
+              "fastHits": 5067869,
+              "resourceEpochMisses": 383,
+              "packCalls": 13263554,
+              "packHits": 8138770,
+              "packBytes": 7285104848,
+              "bgSlowPaths": 5460666,
+              "bgFastEntryAllocations": 5460666,
+              "bgFastEntryReuses": 0
+            },
+            "stageBGMeanSampledUs": 1.4869227042527637,
+            "playerInputLocked": true,
+            "inputEventsAfterWarmup": 0
+          },
+          {
+            "label": "optimized-B",
+            "results": {
+              "frames": 707,
+              "frameMs": {
+                "samples": 707,
+                "mean": 35.71451202263631,
+                "median": 33.23499999940395,
+                "p95": 48.64000000059605,
+                "max": 72.86500000208616
+              },
+              "cpuMs": {
+                "samples": 707,
+                "mean": 29.942383309655007,
+                "median": 29.53999998420477,
+                "p95": 39.110000006854534,
+                "max": 55.29000000655651
+              },
+              "idleMs": {
+                "samples": 707,
+                "mean": 4.520084865739018,
+                "median": 1.2650000005960464,
+                "p95": 17.905000001192093,
+                "max": 21.979999996721745
+              },
+              "syncWaitMs": {
+                "samples": 707,
+                "mean": 0.00845120217034638,
+                "median": 0.009999997913837433,
+                "p95": 0.015000000596046448,
+                "max": 0.11500000208616257
+              },
+              "yieldWaitMs": {
+                "samples": 707,
+                "mean": 0.9772347950888995,
+                "median": 0.8249999955296516,
+                "p95": 1.7150000110268593,
+                "max": 32.91499999910593
+              },
+              "shaderWaitMs": {
+                "samples": 707,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "gpuMs": {
+                "samples": 23,
+                "mean": 1.8264598260869562,
+                "median": 1.769472,
+                "p95": 2.097152,
+                "max": 2.228224
+              },
+              "gpuSpanMs": {
+                "samples": 23,
+                "mean": 47.77004521739131,
+                "median": 46.399488,
+                "p95": 58.130432,
+                "max": 64.421888
+              },
+              "draws": {
+                "samples": 707,
+                "mean": 7012.581329561527,
+                "median": 7237,
+                "p95": 8001,
+                "max": 8278
+              },
+              "triangles": {
+                "samples": 707,
+                "mean": 5663399.848656294,
+                "median": 5587649,
+                "p95": 6214647,
+                "max": 6658366
+              },
+              "verticesOrIndices": {
+                "samples": 707,
+                "mean": 16901883.413012728,
+                "median": 16682537,
+                "p95": 18536411,
+                "max": 19873800
+              },
+              "renderPasses": {
+                "samples": 707,
+                "mean": 73.87977369165488,
+                "median": 71,
+                "p95": 85,
+                "max": 91
+              },
+              "computePasses": {
+                "samples": 707,
+                "mean": 4,
+                "median": 4,
+                "p95": 4,
+                "max": 4
+              },
+              "uploadBytes": {
+                "samples": 707,
+                "mean": 1501922.0141442716,
+                "median": 1491016,
+                "p95": 3221260,
+                "max": 4536822
+              },
+              "submits": {
+                "samples": 707,
+                "mean": 5.543140028288543,
+                "median": 5,
+                "p95": 7,
+                "max": 10
+              },
+              "pipelineCpuMs": {
+                "samples": 707,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "moduleCpuMs": {
+                "samples": 707,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "uploadCpuMs": {
+                "samples": 707,
+                "mean": 0.27272984436074277,
+                "median": 0.17999999970197678,
+                "p95": 0.8899999931454659,
+                "max": 4.975000016391277
+              },
+              "flushCpuMs": {
+                "samples": 707,
+                "mean": 1.0236704390195674,
+                "median": 0.9800000116229057,
+                "p95": 1.4950000047683716,
+                "max": 2.54500000923872
+              },
+              "newPipelines": {
+                "samples": 707,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "skippedDraws": {
+                "samples": 707,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "newBindGroups": {
+                "samples": 707,
+                "mean": 0.21074964639321075,
+                "median": 0,
+                "p95": 1,
+                "max": 8
+              },
+              "fps": 27.999822575377404,
+              "framesOver100Ms": 0,
+              "memory": {
+                "wasmCapacityBytes": 3676372992,
+                "textureBytes": 2637107268,
+                "bufferBytes": 1245686916,
+                "proxyTextureBytes": 8294404,
+                "proxyTextures": 4,
+                "proxyTexturesCreated": 4,
+                "proxyTexturesDestroyed": 0,
+                "uniformRingBytes": 50331648,
+                "objectsAlive": 100135,
+                "objectTableLength": 384076,
+                "bindGroupCache": 11823
+              }
+            },
+            "cacheDelta": {
+              "resets": 0,
+              "fastChecks": 12127594,
+              "fastHits": 4678296,
+              "resourceEpochMisses": 9682,
+              "packCalls": 7462194,
+              "packHits": 2030360,
+              "packBytes": 6745839536,
+              "bgSlowPaths": 4878853,
+              "bgFastEntryAllocations": 0,
+              "bgFastEntryReuses": 4878853
+            },
+            "stageBGMeanSampledUs": 1.3370404873960897,
+            "playerInputLocked": true,
+            "inputEventsAfterWarmup": 0
+          },
+          {
+            "label": "original-A2",
+            "results": {
+              "frames": 728,
+              "frameMs": {
+                "samples": 728,
+                "mean": 34.78015109890519,
+                "median": 32.04000000655651,
+                "p95": 49.51500000059605,
+                "max": 80.49499999731779
+              },
+              "cpuMs": {
+                "samples": 728,
+                "mean": 24.01089972473558,
+                "median": 26.690000005066395,
+                "p95": 34.32000000029802,
+                "max": 62.360000006854534
+              },
+              "idleMs": {
+                "samples": 728,
+                "mean": 9.785515109762795,
+                "median": 11.865000002086163,
+                "p95": 18.939999997615814,
+                "max": 23.00499999523163
+              },
+              "syncWaitMs": {
+                "samples": 728,
+                "mean": 0.007534340678990542,
+                "median": 0.005000002682209015,
+                "p95": 0.015000000596046448,
+                "max": 0.03500000387430191
+              },
+              "yieldWaitMs": {
+                "samples": 728,
+                "mean": 0.7302609891477194,
+                "median": 0.6100000068545341,
+                "p95": 1.405000001192093,
+                "max": 15.430000007152557
+              },
+              "shaderWaitMs": {
+                "samples": 728,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "gpuMs": {
+                "samples": 24,
+                "mean": 1.3434879999999998,
+                "median": 1.441792,
+                "p95": 1.6384,
+                "max": 1.703936
+              },
+              "gpuSpanMs": {
+                "samples": 24,
+                "mean": 42.48098133333333,
+                "median": 45.54752,
+                "p95": 59.572224,
+                "max": 74.448896
+              },
+              "draws": {
+                "samples": 728,
+                "mean": 5591.751373626374,
+                "median": 7037,
+                "p95": 7665,
+                "max": 8238
+              },
+              "triangles": {
+                "samples": 728,
+                "mean": 3463647.8282967033,
+                "median": 4012836,
+                "p95": 4204196,
+                "max": 4531180
+              },
+              "verticesOrIndices": {
+                "samples": 728,
+                "mean": 10303437.256868131,
+                "median": 11961518,
+                "p95": 12533210,
+                "max": 13515770
+              },
+              "renderPasses": {
+                "samples": 728,
+                "mean": 74.20192307692308,
+                "median": 72,
+                "p95": 78,
+                "max": 82
+              },
+              "computePasses": {
+                "samples": 728,
+                "mean": 4,
+                "median": 4,
+                "p95": 4,
+                "max": 4
+              },
+              "uploadBytes": {
+                "samples": 728,
+                "mean": 2489366.708791209,
+                "median": 2099960,
+                "p95": 5347400,
+                "max": 8686158
+              },
+              "submits": {
+                "samples": 728,
+                "mean": 5.622252747252747,
+                "median": 5,
+                "p95": 7,
+                "max": 9
+              },
+              "pipelineCpuMs": {
+                "samples": 728,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "moduleCpuMs": {
+                "samples": 728,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "uploadCpuMs": {
+                "samples": 728,
+                "mean": 0.5202815932948347,
+                "median": 0.4649999961256981,
+                "p95": 1.4600000008940697,
+                "max": 2.710000015795231
+              },
+              "flushCpuMs": {
+                "samples": 728,
+                "mean": 1.103633241820057,
+                "median": 1.25,
+                "p95": 1.9750000089406967,
+                "max": 2.4550000056624413
+              },
+              "newPipelines": {
+                "samples": 728,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "skippedDraws": {
+                "samples": 728,
+                "mean": 0,
+                "median": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "newBindGroups": {
+                "samples": 728,
+                "mean": 0.28434065934065933,
+                "median": 0,
+                "p95": 1,
+                "max": 21
+              },
+              "fps": 28.75203150084871,
+              "framesOver100Ms": 0,
+              "memory": {
+                "wasmCapacityBytes": 3676372992,
+                "textureBytes": 2638043460,
+                "bufferBytes": 1244286492,
+                "proxyTextureBytes": 8294404,
+                "proxyTextures": 4,
+                "proxyTexturesCreated": 4,
+                "proxyTexturesDestroyed": 0,
+                "uniformRingBytes": 50331648,
+                "objectsAlive": 100366,
+                "objectTableLength": 430459,
+                "bindGroupCache": 12041
+              }
+            },
+            "cacheDelta": {
+              "resets": 0,
+              "fastChecks": 9682973,
+              "fastHits": 3381425,
+              "resourceEpochMisses": 13708,
+              "packCalls": 10192562,
+              "packHits": 5095282,
+              "packBytes": 6647747792,
+              "bgSlowPaths": 3875723,
+              "bgFastEntryAllocations": 3875723,
+              "bgFastEntryReuses": 0
+            },
+            "stageBGMeanSampledUs": 1.4825127137883287,
+            "playerInputLocked": true,
+            "inputEventsAfterWarmup": 0
+          }
+        ]
+      }
+    ],
+    "streamingAdmission": {
+      "backgroundStarts": 107,
+      "demandStarts": 49,
+      "promoted": 0,
+      "demandQueueWaitMs": 0.5350000038743019,
+      "maxDemandQueueWaitMs": 0.07500000298023224
+    },
+    "limitations": [
+      "Overall FPS gain not established; draws varied",
+      "Timing includes opt-in sampling overhead",
+      "Exact user screenshot spawn/cache state not reproduced",
+      "Nearby essential asset readiness is not separately measured"
+    ],
+    "runtime": "e81954ef7c79e2aa8bcacaead19183b355dd855b9a77e0ed977b3bbcc38acb8f"
+  },
+  "startupOverlay20261014": {
+    "environment": "Desktop Chromium, Balanced 1280x720; fresh OPFS; warm engine/shader compiler caches; 4 MiB/s per pack connection; HTTP IO cache reuse disabled",
+    "milestone": "native worldReady, not all visible textures ready",
+    "runs": [
+      {
+        "case": "original",
+        "worldReadyMs": 192066.89,
+        "ioEncodedBodyBytes": 797497459,
+        "storedDecodedBytes": 887532738,
+        "packAttempts": 111,
+        "engineReads": 9921
+      },
+      {
+        "case": "overlay",
+        "worldReadyMs": 95308.415,
+        "ioEncodedBodyBytes": 579358773,
+        "storedDecodedBytes": 660864194,
+        "packAttempts": 124,
+        "engineReads": 9905
+      },
+      {
+        "case": "overlay-repeat",
+        "worldReadyMs": 91018.405,
+        "ioEncodedBodyBytes": 579358773,
+        "storedDecodedBytes": 660864194,
+        "packAttempts": 124,
+        "engineReads": 9912
+      }
+    ],
+    "packFailures": 0,
+    "capturedErrors": 0,
+    "limitations": [
+      "Baseline once, candidate twice",
+      "No physical Dell or iPhone available",
+      "No FPS improvement established",
+      "Historical io.fetchedBytes represented decoded store writes; measurementVersion 2 corrects this"
+    ],
+    "candidateVersion": "edcb8634-7f78-4589-a521-ae347a7c0e4c"
+  },
+  "worldStartupRelease20261014": {
+    "version": "edcb8634-7f78-4589-a521-ae347a7c0e4c",
+    "implementationCommit": "579a3cb6d5056b239030208797d4d3bbaa4069da",
+    "deployedPercent": 100,
+    "runtime": "a73ab54d112708dc82010fd15d1b0a5bf609e0bfc3689f0b72dc1e37852a9076",
+    "publicWarmWorldReadyMs": {
+      "gta5": 17756.204999998212,
+      "gta6": 13863.29999999702
+    },
+    "gta6Observation": {
+      "frames": 1519,
+      "fps": 52.204452431475474,
+      "frameMs": {
+        "samples": 1519,
+        "mean": 19.155454246218145,
+        "median": 17.599999994039536,
+        "p95": 27.405000001192093,
+        "max": 45.57500000298023
+      },
+      "cpuMs": {
+        "samples": 1519,
+        "mean": 16.295516786644377,
+        "median": 15.935000017285347,
+        "p95": 19.394999980926514,
+        "max": 36.05000002682209
+      },
+      "gpuMs": {
+        "samples": 50,
+        "mean": 1.2150374400000015,
+        "median": 1.245184,
+        "p95": 1.31072,
+        "max": 1.31072
+      },
+      "framesOver100Ms": 0,
+      "memory": {
+        "wasmCapacityBytes": 3678470144,
+        "textureBytes": 2638223444,
+        "bufferBytes": 1242730388,
+        "proxyTextureBytes": 8294404,
+        "proxyTextures": 4,
+        "proxyTexturesCreated": 4,
+        "proxyTexturesDestroyed": 0,
+        "uniformRingBytes": 25165824,
+        "objectsAlive": 100668,
+        "objectTableLength": 162983,
+        "bindGroupCache": 1855
+      }
+    },
+    "environment": {
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+      "viewport": [
+        1280,
+        720
+      ],
+      "devicePixelRatio": 1,
+      "crossOriginIsolated": true,
+      "settings": {
+        "mode": "sandbox",
+        "map": "env_test",
+        "quality": "balanced",
+        "profile": "1",
+        "deliveryAudit": "1"
+      },
+      "visibility": "visible"
+    },
+    "packFailures": 0,
+    "capturedWarningsErrors": 0,
+    "previewDeliveryChecksPassed": 55,
+    "publicBodyIsolationChecksPassed": 27,
+    "publicStaticLabels": 26,
+    "strictPublicRoutingPassed": false,
+    "routingException": "Byte-identical io_worker.js retained cached HIT worker label after targeted purge; fresh query reports static. Original strict checks unchanged. Actual account billing unmeasured.",
+    "limitations": [
+      "Warm stores; not a loading-speed comparison",
+      "Short stationary gameplay observation, not sustained route performance",
+      "Stable 60 FPS not achieved",
+      "Neither physical iPhone nor Dell available",
+      "Estimated allocation counts are not resident GPU memory"
+    ]
+  }
+}

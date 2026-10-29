@@ -1,0 +1,8 @@
+# Keep installer checksums identical in ZIP downloads and Windows Git clones.
+* -text
+# Original code/shaders contain CRLF; retain bytes without false whitespace errors.
+* whitespace=cr-at-eol
+*.wasm binary
+*.bin binary
+# Preserve the pinned upstream decoder header byte-for-byte.
+codecs/bcdec/bcdec.h whitespace=cr-at-eol,-blank-at-eol
